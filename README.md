@@ -1,1 +1,0 @@
-# gptaparv.github.io
