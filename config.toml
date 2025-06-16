@@ -1,6 +1,6 @@
 base_url = "https://gptparv.github.io"
-title = "Abridge"
-description = "Abridge is a fast, lightweight, and modern Zola theme (class-light, semantic HTML). Perfect Lighthouse, YellowLabTools, and Observatory scores." #for SEO aim for 140-180 Characters
+title = "Today I Learned"
+description = "Developer journal with learnings from day to day activities and knowledge base"
 theme = "abridge"
 
 default_language = "en"
@@ -8,10 +8,7 @@ compile_sass = true
 minify_html = false
 build_search_index = true
 generate_feeds = true
-taxonomies = [
-    { name = "categories", feed = true },
-    { name = "tags", feed = true },
-]
+taxonomies = [{ name = "tags", feed = true }]
 
 [search]
 index_format = "elasticlunr_json"
@@ -21,7 +18,7 @@ include_content = true
 
 [markdown]
 highlight_code = true
-highlight_theme = "css"            # TODO
+highlight_theme = "css"
 bottom_footnotes = true
 render_emoji = false
 external_links_target_blank = true
@@ -38,10 +35,7 @@ smart_punctuation = false
 ###############################################################################
 
 menu = [
-    #    {url = "blog", name = "Blog", slash = true, blank = false, size="s110"},
-    #    {url = "about", name = "About", slash = true, blank = false, size="s110"},
-    { url = "archive", name = "Posts", slash = true, blank = false, size = "s110" },
-    #    {url = "categories", name = "Categories", slash = true, blank = false, size="s110"},
+    { url = "posts", name = "Posts", slash = true, blank = false, size = "s110" },
     { url = "tags", name = "Tags", slash = true, blank = false, size = "s110" },
 ]
 menu_footer = [
@@ -52,39 +46,26 @@ menu_footer = [
 ]
 
 toc = true
-recent = true     # TOC / index
+recent = true
 recent_items = 15
 series = true
-series_items = 9  # Max number of items to display in series list, use 0 to disable
-#Series_parts = "$NUMBER_OF_PARTS part Series"
-
-#arrow_pagination = true # If set to true then the pagination will use the old arrows mode, be sure to also enable the icons.
+series_items = 9
+Series_parts = "$NUMBER_OF_PARTS part Series"
 
 meta_index = { position = "bottom", size = "s90", author = false, readtime = false, readstring = "min", date = true, updated = false, categories_tags = true, divider = "" }
 meta_post = { position = "top", size = "s95", author = true, readtime = false, readstring = "min read", date = true, updated = true, categories_tags = true, divider = "" }
 
-hide_section_dates = false        # hides the date for sections that use posts.html as their template.
-hide_page_nextprev_titles = false # hides the next/previous titles for pages that use page.html as their template.
+hide_section_dates = false
+hide_page_nextprev_titles = false
 title_size_index = "s85"
-footer_size = "s80"               # the size of the copyright and powered by text
+footer_size = "s80"
 footer_credit = true
-#footer_credit_override = '<p class="s90">Powered by <a href="https://www.getzola.org/" target="_blank">Zola</a> &#38; <a href="https://github.com/Jieiku/abridge/" target="_blank">Abridge</a></p>'
-#archive_reverse = true # Set to True to sort posts chronologically per year instead of newest first on the archive page: example.com/archive/
 
-### Uncomment one of the below lines, or neither, depending on which type of logo you want to use:
-#logo = { file="logo.svg", width="32", height="32", alt="Abridge", text="bridge" }
-#textlogo = '<font color="#f90">A</font>bridge'
-textlogo = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#f90" viewBox="0 0 96 96" width="28" height="28"><path stroke-width="14" d="M14 99 46 7h4l32 92"/><path stroke-width="9" d="M-3 82c43-26 59-26 102 0"/><path stroke-linecap="round" stroke-width="1.5" d="M94 72v7m-5-9.8v7m-5-9.8v7.1M79 64v7M63 57.7v7m-5-8.2v7m-5-7.8v7m-5-7.2v7m-5-6.7v7m-5-6.3v7m-5-5.8v7M17 64v7m-5-4.6v7m-5-4.2v7M2 72v7"/></svg>bridge'
+textlogo = '<font color="#f90">T</font>oday I Learned'
 
-sitedesc = false # enables or disables the display of the site description below the logo.
-headhr = false   # show or hide horizontal rule below header
-foothr = false   # show or hide horizontal rule above footer
-
-### $CURRENT_YEAR and $SITE_TITLE can be used anywhere within the copyright, you can change their position or you can also delete them and type whatever you want instead.
-#copyright = false # set to false to disable the copyright.
-#copyright_override = '© 2019-$CURRENT_YEAR $SITE_TITLE'
-#copyright_override = '© $CURRENT_YEAR $SITE_TITLE • Website content is licensed <a rel="noopener" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.'
-
+sitedesc = false
+headhr = true
+foothr = true
 
 ###############################################################################
 ### meta/seo/analytic tags
@@ -92,48 +73,45 @@ foothr = false   # show or hide horizontal rule above footer
 ### To always set the page title exactly eg "Abridge" then comment out title_addition or set to false (not recommend, bad for SEO)
 ###############################################################################
 
-title_separator = "|"                                                                                 # Separator between title and title_addition, set as |, -, _, etc
-title_addition = "Fast, Lightweight, and Modern Zola Theme"                                           # a default value for title addition (for SEO aim for 50-70 characters including the title and separator 'Abridge | title_addition')
-author = "Jake G"                                                                                     # Put Your Name here
-keywords = "Abridge, Abridge.css, Zola, Theme, Zola Theme, getzola, Semantic Html, Fast, lightweight" # used for the primary site index
-banner = "banner.png"                                                                                 # Used as default image for OpenGraph/Twitter if page specific image is undefined.
-twitter_meta = "your-user-name"                                                                       # for SEO: twitter:site and twitter:creator
-google = "Your Google Site verification code."
-bing = "Your Bing Site verification code."
-seo = true                                                                                            # enable or disable seo-related meta tags: opengraph, facebook, twitter
+title_separator = "|"                                 # Separator between title and title_addition, set as |, -, _, etc
+title_addition = "Knowledge base by learning"         # a default value for title addition (for SEO aim for 50-70 characters including the title and separator 'Abridge | title_addition')
+author = "Parv Gupta"                                 # Put Your Name here
+keywords = "DevOps, Platform Engineering, SRE, Linux"
+banner = "banner.png"                                 # Used as default image for OpenGraph/Twitter if page specific image is undefined.
+# twitter_meta = "your-user-name"                             # for SEO: twitter:site and twitter:creator
+# google = "Your Google Site verification code."
+# bing = "Your Bing Site verification code."
+seo = true # enable or disable seo-related meta tags: opengraph, facebook, twitter
 #dev = false # development mode, if true then robots.txt should prevent search indexing.
-
-#head_extra = '<meta name="analytics" content="my-analytics-id" /><meta name="advertising" content="my-advertising-id" />'
-
 
 ###############################################################################
 ### Footer social links; these are used in macros/social.html
 ###   https://github.com/Jieiku/abridge/blob/master/templates/macros/social.html
 ###############################################################################
 
-feed = true                                         # this adds the RSS feed icon in the footer.
-mail = "name@example.com"
-mastodon = "https://mastodon.example.com/@username"
-element = "matrix.example.com"
+feed = true # this adds the RSS feed icon in the footer.
+# mail = "name@example.com"
+# mastodon = "https://mastodon.example.com/@username"
+# element = "matrix.example.com"
 #buymeacoffee = "your-user-name"
-kofi = "your-user-name"
+# kofi = "your-user-name"
 #discord = "https://discord.com/invite/my-server" # https://discord.com/invite/my-server  *or*  https://discord.com/servers/my-server-id
 #twitter = "your-user-name"
 #facebook = "your-user-name"
 #linkedin = "your-user-name"
 #gitlab = "your-user-name"
-github = "your-user-name"
+# github = "your-user-name"
 #codeberg = "your-user-name" # Everything after https://codeberg.org/   eg: username  *or*  username/repository
 #github_sponsor = "your-user-name"
 #bitbucket = "your-user-name"
 #python = "your-user-name"
 #docker = "your-user-name"
 #stack = "your-user-name"
-instagram = "your-user-name"
+# instagram = "your-user-name"
 #pixelfed = "https://pixelfed.example.com/" # Heaviest icon, off by default
 #pinterest = "your-user-name"
-twitch = "your-user-name"
-youtube = "channel/your-channel-id"
+# twitch = "your-user-name"
+# youtube = "channel/your-channel-id"
 #peertube = "https://peertube.example.com/@username"
 #researchgate = "your-profile-id"
 #telegram = "your-user-name"
@@ -301,34 +279,3 @@ favicon16 = "favicon-16x16.png"        # favicon-16x16.png
 #    {url = "fonts/Roboto-Italic.woff2"},
 #    {url = "fonts/Roboto-Bold.woff2"},
 #]
-
-
-###############################################################################
-### Katex - math js library, used to to render mathematical notations
-### It's best to enable katex on a per page bases as I did here:
-###   https://abridge.netlify.app/overview-math/
-###   https://github.com/Jieiku/abridge/blob/master/content/overview-math.md?plain=1#L11-L13
-### Otherwise you will load the katex related javascript on every page!
-###############################################################################
-
-#katex_options = "js/katexoptions.js"
-#katex_bundle = "js/katexbundle.min.js"
-
-### Load Katex Local Resources
-#katex_css = "katex.min.css" # Fonts - load the css/fonts locally
-#katex_js = "js/katex.min.js" # use local js, so that we dont have to whitelist cdn.jsdelivr.net for script src in CSP
-#mathtex_js = "js/mathtex-script-type.min.js" # use local js, so that we dont have to whitelist cdn.jsdelivr.net for script src in CSP
-#katex_autorender_js = "js/katex-auto-render.min.js"
-
-### Load Katex External Resources
-#katex_css = "https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css" # Fonts - use remote fonts
-#katex_css_integrity = "sha384-ZPe7yZ91iWxYumsBEOn7ieg8q/o+qh/hQpSaPow8T6BwALcXSCS6C6fSRPIAnTQs"
-#katex_js = "https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.js"
-#katex_js_integrity = "sha384-ljao5I1l+8KYFXG7LNEA7DyaFvuvSCmedUf6Y6JI7LJqiu8q5dEivP2nDdFH31V4"
-#katex_autorender_js = "https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/auto-render.min.js"
-#katex_autorender_js_integrity = "sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"
-#mathtex_js = "https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/mathtex-script-type.min.js"
-#mathtex_js_integrity = "sha384-jiBVvJ8NGGj5n7kJaiWwWp9AjC+Yh8rhZY3GtAX8yU28azcLgoRo4oukO87g7zDT"
-
-#math = false # Recommended setting false, and enable on per page bases instead.
-#math_auto_render = false # Recommended setting false, and enable on per page bases instead.
